@@ -17,7 +17,7 @@ class _ChooseLocationState extends State<ChooseLocation> {
     WorldTime(url: 'Asia/Dili', location: 'India', flag: 'india.png'),
     WorldTime(url: 'Asia/Qatar', location: 'Qatar', flag: 'qatar.jpg'),
     WorldTime(url: 'Europe/London', location: 'England', flag: 'england.jpg'),
-    WorldTime(url: 'Europe/Berlin', location: 'Germany', flag: 'germany.jpg'),
+    WorldTime(url: 'Europe/Berlin', location: 'Germany', flag: 'germany.png'),
     WorldTime(url: 'Europe/Dublin', location: 'Ireland', flag: 'ireland.jpg'),
     WorldTime(url: 'Europe/Istanbul', location: 'Turkey', flag: 'turkey.jpg'),
   ];
@@ -48,9 +48,16 @@ class _ChooseLocationState extends State<ChooseLocation> {
     return Scaffold(
       backgroundColor: Colors.grey[300],
       appBar: AppBar(
-        title: Text('Location Chose'),
-        centerTitle: true,
+        title: Text("Choose Location"),
+        elevation: 0,
+        brightness: Brightness.light,
         backgroundColor: Colors.blue,
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          icon: Icon(Icons.arrow_back_ios, size: 20, color: Colors.black,),
+        ),
       ),
       body: ListView.builder(
           itemCount: locations.length,
